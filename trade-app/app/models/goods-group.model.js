@@ -1,17 +1,15 @@
-const { ForeignKeyConstraintError } = require("sequelize");
-
-odule.exports = (sequelize, Sequelize) => {
-  const Tutorial = sequelize.define("goodsgroup", {
+module.exports = (sequelize, Sequelize) => {
+  const GoodsGroup = sequelize.define("goodsgroup", {
     name: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING
     },
     description: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING
     },
     baseGoodsGroup: {
-      type: Sequelize.BOOLEAN,
-    },
+      type: Sequelize.BOOLEAN
+    }
   });
-  GoodsGroup.belongsTo(GoodsGroup,{ foreignKey: " baseGoodsGroup"})
-  return Tutorial;
+  GoodsGroup.belongsTo(GoodsGroup,{ foreignKey: " baseGoodsGroup"});
+  return GoodsGroup ;
 };
